@@ -3,63 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TSP Optimization</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Traveling Salesman Problem (TSP)</h1>
-
-    <!-- Form untuk memilih kota awal dan akhir -->
-    <div>
-      <label for="startCity">Start City:</label>
-      <select id="startCity">
-        <option value="0">Surabaya</option>
-        <option value="1">Ngawi</option>
-        <option value="2">Bojonegoro</option>
-        <option value="3">Malang</option>
-        <option value="4">Banyuwangi</option>
-        <option value="5">Mojokerto</option>
-      </select>
-
-      <label for="endCity">End City:</label>
-      <select id="endCity">
-        <option value="0">Surabaya</option>
-        <option value="1">Ngawi</option>
-        <option value="2">Bojonegoro</option>
-        <option value="3">Malang</option>
-        <option value="4">Banyuwangi</option>
-        <option value="5">Mojokerto</option>
-      </select>
-    </div>
-
-    <!-- Tabel Hasil -->
-    <h2>Results</h2>
-    <table id="resultTable">
-      <thead>
-        <tr>
-          <th>Algorithm</th>
-          <th>Best Distance</th>
-          <th>Route</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Hasil ditambahkan secara dinamis -->
-      </tbody>
-    </table>
-
-    <!-- Grafik Rute -->
-    <canvas id="mapCanvas" width="800" height="600"></canvas>
-
-    <!-- Tombol -->
-    <div class="buttons">
-      <button id="runALO">Run ALO</button>
-      <button id="runPSO">Run PSO</button>
-    </div>
-
-    <!-- Script -->
+    <title>TSP - PSO & Ant Lion Algorithm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tambahkan Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="alo.js" type="module"></script>
-    <script src="pso.js" type="module"></script>
-    <script src="main.js" type="module"></script>
+    <!-- Link ke file pso.js -->
+  </head>
+  <body class="bg-gray-100">
+    <h1 class="text-center text-2xl font-bold mt-10 mb-10">
+      Travelling Salesman Problem - PSO & Ant Lion Algorithm
+    </h1>
+
+    <div class="mt-5 text-center">
+      <button
+        id="startButton"
+        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded"
+      >
+        Mulai PSO Optimasi
+      </button>
+    </div>
+
+    <div class="mt-5 text-center">
+      <button
+        id="startAntLionButton"
+        class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded"
+      >
+        Mulai Ant Lion Optimasi
+      </button>
+    </div>
+
+    <div class="mt-5 text-center">
+      <h2 class="text-xl font-semibold">Urutan Pengiriman:</h2>
+      <ul id="routeList" class="list-disc text-lg mt-4"></ul>
+    </div>
+
+    <div class="mt-5 text-center">
+      <h2 class="text-xl font-semibold">Best Distance (Iterasi Awal):</h2>
+      <p id="bestDistanceStart" class="text-lg font-semibold mt-4"></p>
+    </div>
+
+    <div class="mt-5 text-center">
+      <h2 class="text-xl font-semibold">Best Distance (Iterasi Akhir):</h2>
+      <p id="bestDistanceEnd" class="text-lg font-semibold mt-4"></p>
+    </div>
+
+    <!-- Canvas untuk grafik perubahan jarak -->
+    <div class="mt-10 mx-auto" style="width: 80%; height: 400px">
+      <canvas id="distanceChart"></canvas>
+    </div>
+
+    <script src="pso.js" defer></script>
   </body>
 </html>
