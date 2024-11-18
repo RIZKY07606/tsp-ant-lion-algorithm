@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSP Optimization</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Traveling Salesman Problem (TSP)</h1>
+
+    <!-- Form untuk memilih kota awal dan akhir -->
+    <div>
+      <label for="startCity">Start City:</label>
+      <select id="startCity">
+        <option value="0">Surabaya</option>
+        <option value="1">Ngawi</option>
+        <option value="2">Bojonegoro</option>
+        <option value="3">Malang</option>
+        <option value="4">Banyuwangi</option>
+        <option value="5">Mojokerto</option>
+      </select>
+
+      <label for="endCity">End City:</label>
+      <select id="endCity">
+        <option value="0">Surabaya</option>
+        <option value="1">Ngawi</option>
+        <option value="2">Bojonegoro</option>
+        <option value="3">Malang</option>
+        <option value="4">Banyuwangi</option>
+        <option value="5">Mojokerto</option>
+      </select>
+    </div>
+
+    <!-- Tabel Hasil -->
+    <h2>Results</h2>
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Algorithm</th>
+          <th>Best Distance</th>
+          <th>Route</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hasil ditambahkan secara dinamis -->
+      </tbody>
+    </table>
+
+    <!-- Grafik Rute -->
+    <canvas id="mapCanvas" width="800" height="600"></canvas>
+
+    <!-- Tombol -->
+    <div class="buttons">
+      <button id="runALO">Run ALO</button>
+      <button id="runPSO">Run PSO</button>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="alo.js" type="module"></script>
+    <script src="pso.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
